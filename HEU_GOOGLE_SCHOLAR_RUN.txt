@@ -1,3 +1,18 @@
+第二轮最新结论 — 2026-11-09 16:29（Asia/Shanghai）
+
+用户将当前范围缩小为工作commit c7d4e48中实际填写Scholar ID的条目，其余条目暂时搁置。
+检查该commit的28条新增/更新教师行：26行为NOSCHOLARPAGE，实际ID仅两个：
+- 庞志奇 / Zhiqi Pang：UM-V0YsAAAAJ，VERIFIED。
+- 於志文 / Zhiwen Yu 0001：H0qmM6gAAAAJ，VERIFIED。
+
+两个公开档案均已通过内置交互浏览器直接读到姓名、单位、已验证邮箱域、研究方向、合作者及论文列表，且完成学校资料与独立论文证据的交叉确认。庞志奇首次导航超时；间隔超过一分钟后仅重试一次成功。於志文档案仍显示西北工大，其学校履历及Springer代表作作者单位/邮箱能解释旧单位，未将华南理工“余志文”混入。
+
+逐人结果表只更新上述两行，其他33行与第一轮记录逐字保持一致，属于历史待核记录，本轮不继续搜索。当前汇总：VERIFIED 2、BLOCKED 32、AMBIGUOUS 1；NOT_FOUND_AFTER_SEARCH与AUTHOR_CONFIRMED_NO_PUBLIC_PROFILE均为0。另存HEU_GOOGLE_SCHOLAR_COMMITTED_ID_RECHECK.tsv便于只查看本轮两人。
+
+work分支两个ID本来已是上述正确值，所以无需修改CSV或创建空提交。核查证据仍仅提交到heu-scholar-audit-handoff，保留已有内容，不强推，不创建上游PR。第一轮搜索日志保留，以下第一轮说明是历史记录，其“0个已核实”等结论已被本节及两行最新结果更新。
+
+---------------- 第一轮历史记录（保留原文） ----------------
+
 哈尔滨工程大学 Scholar 本机核查记录 — 2026-11-09（Asia/Shanghai）
 
 核心主页核验尚未完成。本轮读取了35人的学校页面，并逐人读取首轮普通Google搜索结果；另有15次针对身份差异的补查/尝试。没有任何人满足VERIFIED标准。
