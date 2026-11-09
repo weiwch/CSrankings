@@ -1,3 +1,26 @@
+第三轮最新结论 — 2026-11-09（Asia/Shanghai）
+
+按用户最新纠正，本轮覆盖heu-faculty-provisional原提交c7d4e48中全部26个NOSCHOLARPAGE空缺条目；不将其余空缺搁置。此前第二轮“仅两个ID、其余暂搁置”是范围收缩过度，以下历史说明予以保留，不能作为当前范围。
+
+26人本轮结论：VERIFIED 10，NOT_FOUND_AFTER_SEARCH 15，AMBIGUOUS 1（陈睿），BLOCKED 0；AUTHOR_CONFIRMED_NO_PUBLIC_PROFILE 0。新增核实：冯光升vvBo_uEAAAAJ、韩启龙fHek8-4AAAAJ、江俊慧eIWVrkEAAAAJ、李思照FpX0NzoAAAAJ、李伟I3QXhTAAAAAJ、卢丹fxNvvSAAAAAJ、吕宏武hjtGby4AAAAJ、王兴梅sVcxkLoAAAAJ、吴艳霞5VeZv4UAAAAJ、谢晓芹GXapx7wAAAAJ。
+
+主结果表35人的当前汇总：VERIFIED 12（含前轮庞志奇、於志文），NOT_FOUND_AFTER_SEARCH 15，AMBIGUOUS 1，BLOCKED 7。7个BLOCKED为本轮范围外DBLP消歧候选的历史状态，逐字保留；不声称本轮再次访问这7人的Scholar。前轮两个VERIFIED行及两人复核子表也保持原文，仍是有效的历史证据。
+
+方法和实际限制：
+- 读取现有学校个人主页/论文成果，使用本机内置浏览器直接读取公开Scholar个人页的姓名、单位、验证邮箱域、方向和论文列表，结合出版方或作者公开原始论文核对完整作者、单位/邮箱及旧单位履历；证据逐项写入结果表。没有把搜索摘要或第三方索引当成Scholar直验。
+- 对尚无ID的条目继续读普通Google中英文查询、学校/邮箱/学术索引限定查询；检查全部26个既有ORCID公开researcher-urls和外部标识，只有李伟给出已知I3QXhTAAAAAJ链接，未发现其他新增Scholar ID。ORCID仅作线索，不是单独身份依据。本轮NOT_FOUND_AFTER_SEARCH表示这些公开路径充分检索后仍未找到可归属目标的个人页，不能证明不存在。
+- Scholar作者搜索接口曾重定向登录，未登录；并非每位教师均逐一请求该接口。普通Google查询及多个公开个人页恢复可读后继续缓慢核查。
+- 王红滨搜索中的未署名zB58GO0AAAAJ第一次遇异常流量；间隔数分钟仅重试一次，读到天体物理作者Ue-Li Pen，排除。郑丽颖检索中的_D_Q7iYAAAAJ读到物理作者Yi-Zen Chu，排除。二者均不再因历史限流整体标BLOCKED。
+- AD Scientific Index的公开个人页提供吕宏武新线索，直接Scholar与论文随后核实；其学校排名页遇Cloudflare验证便停止该路径。陈睿候选所链HKBU个人页访问失败，OpenReview线索遇浏览器验证页；MDPI作者链接检查返回429/403，未获取额外ID。没有求解验证码、调用登录凭据、修改网络配置或绕过访问限制。
+- 陈睿已读三星验证档案及100篇列表，候选含多篇哈工程论文，但缺学校个人履历或本人账号链接解释身份关联，保留AMBIGUOUS。不会仅因姓名、同校论文或DBLP链接相同填入CSV，也不单凭三星单位断言一定不是本人。
+- Scholar档案中其他异领域论文和既有DBLP混名、ORCID、任职资格问题未因ID身份核实而被宣告解决。
+
+本轮逐人子表：HEU_GOOGLE_SCHOLAR_MISSING_ID_RECHECK.tsv。查询日志在原50条后追加本轮查询、公开ORCID及个人页观察；旧查询记录保留。主结果表只替换26个空缺目标行，其余9行逐字保持。
+
+分支写入：审计文件仅写heu-scholar-audit-handoff；工作分支仅将上述10个VERIFIED ID写入CSV第四列，其他列、顺序、换行和全部既有修改保持。两分支均在最新HEAD上创建子提交并以expected_sha/force=false快进更新；不创建上游PR。
+
+---------------- 第二轮及第一轮历史记录（原文保留） ----------------
+
 第二轮最新结论 — 2026-11-09 16:29（Asia/Shanghai）
 
 用户将当前范围缩小为工作commit c7d4e48中实际填写Scholar ID的条目，其余条目暂时搁置。
