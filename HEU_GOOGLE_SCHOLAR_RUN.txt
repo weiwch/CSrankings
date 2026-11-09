@@ -1,0 +1,30 @@
+哈尔滨工程大学 Scholar 本机核查记录 — 2026-11-09（Asia/Shanghai）
+
+核心主页核验尚未完成。本轮读取了35人的学校页面，并逐人读取首轮普通Google搜索结果；另有15次针对身份差异的补查/尝试。没有任何人满足VERIFIED标准。
+
+状态：VERIFIED 0；AUTHOR_CONFIRMED_NO_PUBLIC_PROFILE 0；NOT_FOUND_AFTER_SEARCH 0；AMBIGUOUS 1（陈睿）；BLOCKED 34。陈睿也受访问限制影响，但其已有候选与学校身份无法建立可靠关系，故主状态记AMBIGUOUS。其余人的同名风险、候选和论文访问状态分别写在notes中。
+
+本机限制：
+1. HTTP请求 https://scholar.google.com/citations?user=H0qmM6gAAAAJ&hl=en 返回429。
+2. 普通浏览器打开搜索所得冯光升候选 https://scholar.google.com/citations?user=vvBo_uEAAAAJ&hl=en 被重定向到Google异常流量拦截页。
+3. 此后停止Scholar请求；未逐一重试其他33人的档案，不声称35个个人URL都实测返回429。
+4. 普通Google搜索起初可用；补查张越中文姓名时同样出现异常流量页，此后停止搜索。未求解验证码，未更换代理、邮箱、cookie、Scholar域名或其他方式绕过限制。
+5. 张越首轮结果曾未完整加载，随后重新读取了英文结果；史长亭、玄世昌的中文补查未完整渲染，搜索日志标INCOMPLETE_RENDER。Google AI概述不作身份依据。
+
+表格说明：
+- scholar_id / scholar_url中有值的12行都是待核实线索，其中陈睿候选存在明显身份疑问；只有status=VERIFIED才可据此改CSV。
+- scholar_affiliation前缀“未直读；仅搜索摘要”表示检索索引中的摘要，不是本轮读取到的Scholar档案字段，不能确认当前单位或邮箱验证状态。
+- matched_paper全部留空：学校/出版方论文可以作为身份锚点，但没有Scholar列表可作交叉匹配，不能误写成已经匹配。
+- independent_evidence_urls为实际访问的学校或论文来源；同域学校成果不视为独立出版方证据。403/520等失败来源在notes说明，不能当作已读论文。
+- profile_ids_seen包括搜索命中的其他人/合作者，不能直接当作该行教师的ID。
+- 23人尚无可用目标ID线索。受限检索不足以断言不存在主页，所以没有使用NOT_FOUND_AFTER_SEARCH或AUTHOR_CONFIRMED_NO_PUBLIC_PROFILE。
+- 本轮论文补查：刘海波的ACM DOI落地页返回403/Just a moment；庄园AAAI页面返回520；这两项访问失败与同名消歧问题分开记录。张越的学校论文链接为HTTP200的“页面未找到”，未当作有效成果页。
+- 7位excluded_dblp_disambiguation候选仍不加入CSV；没有修改姓名、DBLP后缀、机构、个人主页、ORCID、排序或换行。
+
+分支处理：
+开始时heu-scholar-audit-handoff = 673ecc7f99964efebb25a6423106a23c5b01b47c。
+开始时heu-faculty-provisional = c7d4e48f3263268301f3d6b48321c067f9e88ea1。
+本轮没有已核实ID，因此heu-faculty-provisional不产生CSV更改或空提交；既有NOSCHOLARPAGE及庞志奇、於志文原字段保持原样，不代表已核实。
+结果、查询日志和本说明仅提交到heu-scholar-audit-handoff；不创建上游PR，不强推。
+
+后续条件：网络允许正常读取Scholar档案后，再逐个打开候选并与学校履历及独立论文的作者/单位/邮箱核对。现有12个线索不可直接视为可提交ID。其余23人仍需继续检索；本轮是受阻核查记录，不是完整主页审定。
