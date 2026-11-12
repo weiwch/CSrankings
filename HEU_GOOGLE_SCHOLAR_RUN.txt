@@ -1,3 +1,19 @@
+最新提交范围 — 2026-11-13（Asia/Shanghai）
+
+按用户明确要求，从heu-faculty-provisional删除庞志奇（Zhiqi Pang，学校简介为准聘副教授）和李伟（Wei Li 0109，学校简介为预聘教授）。这是本次提交范围的排除，不将“所有准聘/预聘均不符合CSrankings”冒充上游规则。两人的Scholar身份核查仍有效，但不代表任职资格或本次收录已获确认。
+
+当前相对原上游基线为25条新增、1条於志文既有记录更新，共26人；该26人中10个Scholar ID已直接核实，16个字段仍是NOSCHOLARPAGE工作占位（15人充分检索未找到可确认主页、陈睿1人身份未定）。后两项不等于确证无公开主页。
+
+主表保留35人证据；仅将上述两人的scope从pr_branch改为excluded_probationary_appointment（新增范围值），不改VERIFIED状态、ID或历史证据。当前scope：pr_branch 26、excluded_dblp_disambiguation 7、excluded_probationary_appointment 2。11月9日两个复核子表保留为当时范围快照，不能再据其pr_branch字段把已排除人员加入CSV。见HEU_FACULTY_SCOPE_REVIEW.tsv。
+
+仅删当前明确准聘/预聘的两个已入工作分支条目。吕继光学校履历的预聘副教授经历止于2022.7，此后写为副教授，未将历史预聘经历误判为当前身份。李熔盛、唐滨此前已因DBLP待消歧未入CSV，郑香平也未加入。
+
+於志文说明：既有DBLP名Zhiwen Yu 0001保持，机构由NWPU改为Harbin Engineering University，主页改为现学校官方个人页；Scholar H0qmM6gAAAAJ、ORCID 0000-0002-9905-3238保持。现学校主页列教授、博士生导师、计算机科学与技术学科及副校长职务，旧单位任职经历也在该页。PR草稿会说明该既有记录更新，不把他再新增为另一条作者记录。其完整收录资格及其余待办不能仅因主页或Scholar核实就宣告全部通过。
+
+工作分支本次排除提交：1c7fce3699f24f40d6984b963be27e80fd948ad1。仍仅修改csrankings-[a-z].csv，不合并审计材料；不强推，未创建上游PR。以下均为历史记录，其旧人数已由本节更新。
+
+---------------- 2026-11-09历史记录（原文保留） ----------------
+
 第三轮最新结论 — 2026-11-09（Asia/Shanghai）
 
 按用户最新纠正，本轮覆盖heu-faculty-provisional原提交c7d4e48中全部26个NOSCHOLARPAGE空缺条目；不将其余空缺搁置。此前第二轮“仅两个ID、其余暂搁置”是范围收缩过度，以下历史说明予以保留，不能作为当前范围。
